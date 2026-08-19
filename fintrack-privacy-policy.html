@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinTrack Privacy Policy — how Techonjo handles your information in the FinTrack personal finance app.">
+  <title>Privacy Policy — FinTrack by Techonjo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0d0b;--panel:#101511;--panel2:#151b16;--text:#eef1eb;--muted:#8e978e;--line:#29302a;--green:#a9df72;--green2:#6f9f45;--max:800px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
+    a{color:var(--green);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Nav */
+    .nav{width:min(1160px,calc(100% - 44px));height:84px;margin:auto;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+    .brand{font:700 22px "Space Grotesk";letter-spacing:-1px;color:var(--green)}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{font-size:13px;color:#b7beb6}
+    .nav-links a:hover{color:var(--green);text-decoration:none}
+    .back-btn{border:1px solid var(--line);padding:9px 14px;border-radius:3px;font-size:12px;color:#b7beb6;display:flex;align-items:center;gap:6px;transition:color .2s,border-color .2s}
+    .back-btn:hover{color:var(--green);border-color:var(--green);text-decoration:none}
+
+    /* Hero banner */
+    .hero-banner{border-bottom:1px solid var(--line);background:linear-gradient(145deg,#0f1a10,#0a0d0b);padding:72px 22px 64px;text-align:center}
+    .hero-banner .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:10px;font-family:"Space Grotesk",sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--green);margin-bottom:26px}
+    .hero-banner .pill span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green)}
+    .hero-banner h1{font:700 clamp(38px,6vw,64px) "Space Grotesk";letter-spacing:-2.5px;line-height:1;margin-bottom:18px}
+    .hero-banner h1 em{font-style:normal;color:var(--green)}
+    .hero-banner .meta{color:var(--muted);font-size:13px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+    .hero-banner .meta span+span::before{content:"·";margin-right:22px;color:var(--green2)}
+
+    /* Content */
+    .doc-wrap{width:min(var(--max),calc(100% - 44px));margin:72px auto 100px}
+
+    /* TOC */
+    .toc{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:28px 32px;margin-bottom:64px}
+    .toc-label{font:600 10px "Space Grotesk";letter-spacing:1.7px;text-transform:uppercase;color:var(--green);margin-bottom:18px}
+    .toc ol{padding-left:20px;display:grid;grid-template-columns:1fr 1fr;gap:6px 32px}
+    .toc ol li{font-size:13px}
+    .toc ol li a{color:var(--muted)}
+    .toc ol li a:hover{color:var(--green)}
+
+    /* Sections */
+    .doc-section{border-top:1px solid var(--line);padding-top:48px;margin-top:48px}
+    .doc-section:first-of-type{border-top:none;margin-top:0;padding-top:0}
+    .section-num{font:600 10px "Space Grotesk";letter-spacing:1.7px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+    h2.section-title{font:700 clamp(24px,4vw,34px) "Space Grotesk";letter-spacing:-1.2px;line-height:1.1;margin-bottom:20px}
+    h3.sub-title{font:600 15px "Space Grotesk";letter-spacing:-0.4px;color:var(--text);margin:28px 0 10px}
+    p{color:var(--muted);font-size:15px;margin-bottom:14px}
+    p:last-child{margin-bottom:0}
+    p strong{color:var(--text);font-weight:600}
+    ul,ol.content-list{padding-left:22px;margin-bottom:14px}
+    li{color:var(--muted);font-size:15px;margin-bottom:6px;line-height:1.7}
+    li strong{color:var(--text)}
+
+    /* Highlight */
+    .highlight{border-left:3px solid var(--green);background:var(--panel);padding:16px 20px;border-radius:0 4px 4px 0;margin:20px 0}
+    .highlight p{font-size:14px;margin:0}
+
+    /* Permissions table */
+    .perm-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}
+    .perm-table th{font:600 10px "Space Grotesk";letter-spacing:1.4px;text-transform:uppercase;color:var(--green);text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+    .perm-table td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+    .perm-table td:first-child{font-family:"Space Grotesk",monospace;font-size:11px;color:var(--green);white-space:nowrap}
+    .badge{display:inline-block;padding:3px 8px;border-radius:3px;font:600 9px "Space Grotesk";letter-spacing:.5px;text-transform:uppercase}
+    .badge-opt{background:#1a2b15;color:var(--green)}
+    .badge-req{background:#2b1c10;color:#e07a3c}
+
+    /* Footer */
+    footer{width:min(1160px,calc(100% - 44px));margin:auto;border-top:1px solid var(--line);padding:25px 0 34px;color:#5f685f;font-size:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    footer a{color:var(--green);font-size:10px}
+
+    /* Responsive */
+    @media(max-width:640px){.toc ol{grid-template-columns:1fr}.nav-links{display:none}}
+    @media(max-width:480px){.nav,footer{width:calc(100% - 28px)}.doc-wrap{width:calc(100% - 28px)}}
+  </style>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <a class="brand" href="index.html">Techonjo</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a class="back-btn" href="index.html">← Back to portfolio</a>
+  </header>
+
+  <div class="hero-banner" role="region" aria-label="Page header">
+    <div class="pill"><span></span> Legal Document</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="meta">
+      <span>FinTrack by Techonjo</span>
+      <span>Effective Date: August 19, 2026</span>
+      <span>Last Updated: August 19, 2026</span>
+    </div>
+  </div>
+
+  <main class="doc-wrap" id="main-content">
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-label">Table of Contents</div>
+      <ol>
+        <li><a href="#s1">Introduction</a></li>
+        <li><a href="#s2">Information We Handle</a></li>
+        <li><a href="#s3">SMS Transaction Tracking</a></li>
+        <li><a href="#s4">AI Adviser</a></li>
+        <li><a href="#s5">Information We Do Not Collect</a></li>
+        <li><a href="#s6">Local Data Storage</a></li>
+        <li><a href="#s7">Permissions</a></li>
+        <li><a href="#s8">Notifications</a></li>
+        <li><a href="#s9">Biometric Authentication</a></li>
+        <li><a href="#s10">Receipt &amp; OCR Features</a></li>
+        <li><a href="#s11">Data Retention</a></li>
+        <li><a href="#s12">Children's Privacy</a></li>
+        <li><a href="#s13">Data Security</a></li>
+        <li><a href="#s14">Third-Party Services</a></li>
+        <li><a href="#s15">Your Privacy Rights</a></li>
+        <li><a href="#s16">Policy Changes</a></li>
+        <li><a href="#s17">Contact Us</a></li>
+        <li><a href="#s18">Governing Principles</a></li>
+      </ol>
+    </nav>
+
+    <section class="doc-section" id="s1">
+      <div class="section-num">01 · Introduction</div>
+      <h2 class="section-title">Introduction</h2>
+      <p>Techonjo <strong>("we," "us," "our," or "Techonjo")</strong> developed FinTrack <strong>("FinTrack," "the App," or "the Application")</strong> as a personal finance and productivity application.</p>
+      <p>This Privacy Policy explains what information FinTrack handles, how that information is used, where it is processed and stored, the permissions the App may request, and the choices and rights available to you.</p>
+      <div class="highlight">
+        <p>We take your privacy seriously, particularly because FinTrack may handle financial information and, when you voluntarily enable the feature, bank transaction SMS messages.</p>
+      </div>
+      <p>By downloading, installing, or using FinTrack, you acknowledge this Privacy Policy and agree to the practices described in it.</p>
+    </section>
+
+    <section class="doc-section" id="s2">
+      <div class="section-num">02 · Information We Handle</div>
+      <h2 class="section-title">Information We Handle</h2>
+      <p>FinTrack is designed to keep most of your financial information on your device. The information handled by the App can be divided into information you provide directly, information processed automatically on your device, SMS information processed for transaction tracking, and information transmitted when you voluntarily use the AI Adviser.</p>
+      <h3 class="sub-title">2.1 Information You Provide Directly</h3>
+      <p>Depending on the features you use, FinTrack may allow you to enter or create:</p>
+      <ul>
+        <li>Transaction records, including amounts, categories, notes, and dates.</li>
+        <li>Budget limits and categories.</li>
+        <li>Notes and organizer entries.</li>
+        <li>An optional profile photo.</li>
+        <li>App settings and preferences.</li>
+      </ul>
+      <p>This information is used to provide the corresponding finance-management, budgeting, organizer, and personalization features.</p>
+      <h3 class="sub-title">2.2 Information Processed Automatically on Your Device</h3>
+      <p>FinTrack may store certain technical or application information locally on your device, including:</p>
+      <ul>
+        <li>App installation date.</li>
+        <li>Last synchronization timestamp.</li>
+        <li>Dark-mode preferences.</li>
+        <li>Notification preferences.</li>
+      </ul>
+      <p>The installation date and synchronization information help FinTrack manage SMS scanning and transaction deduplication.</p>
+    </section>
+
+    <section class="doc-section" id="s3">
+      <div class="section-num">03 · SMS Transaction Tracking</div>
+      <h2 class="section-title">SMS Transaction Tracking</h2>
+      <p>FinTrack provides an optional feature that can automatically detect bank transaction alerts from SMS messages.</p>
+      <h3 class="sub-title">3.1 SMS Permission</h3>
+      <div class="highlight">
+        <p><strong>SMS access is optional.</strong> You can use the core finance-management features of FinTrack without enabling SMS transaction tracking.</p>
+      </div>
+      <p>If you choose to enable SMS Transaction Tracking, FinTrack may request permission to read SMS messages on your device.</p>
+      <h3 class="sub-title">3.2 How SMS Data Is Processed</h3>
+      <p>When SMS Transaction Tracking is enabled:</p>
+      <ul>
+        <li>FinTrack reads messages only from bank senders you explicitly select.</li>
+        <li>FinTrack processes messages received on or after the date the App was installed.</li>
+        <li>FinTrack analyzes the selected messages <strong>locally on your device</strong>.</li>
+        <li>FinTrack extracts relevant transaction information such as amounts, dates, and descriptions.</li>
+        <li>Recognized transactions are stored in FinTrack's local database on your device.</li>
+      </ul>
+      <h3 class="sub-title">3.3 Raw SMS Content</h3>
+      <ul>
+        <li>Raw SMS message content is processed entirely on your device for the SMS transaction-tracking feature.</li>
+        <li>Raw SMS content is <strong>not transmitted to, collected by, or stored by Techonjo</strong> or an external server for the purpose of SMS transaction processing.</li>
+        <li>FinTrack does not use SMS access to send messages on your behalf.</li>
+      </ul>
+      <h3 class="sub-title">3.4 Disabling SMS Tracking</h3>
+      <p>You can disable SMS Transaction Tracking through the App's settings or revoke SMS permissions through your device's system settings. Revoking SMS permission disables the related automatic transaction-import functionality but does not prevent you from using other available features of FinTrack.</p>
+    </section>
+
+    <section class="doc-section" id="s4">
+      <div class="section-num">04 · AI Adviser</div>
+      <h2 class="section-title">AI Adviser</h2>
+      <p>FinTrack includes an optional AI Adviser that provides personalized financial insights based on information you voluntarily submit through the feature.</p>
+      <p>When you use the AI Adviser, the following information may be transmitted to a third-party AI service:</p>
+      <ul>
+        <li>Your typed message or question.</li>
+        <li>A summary of up to 100 recent transactions.</li>
+        <li>General financial information such as income, expenses, and budget status.</li>
+      </ul>
+      <p>This information is transmitted securely over <strong>HTTPS/TLS</strong> and is used to generate the requested AI response. FinTrack does not sell or share this information for advertising purposes.</p>
+      <h3 class="sub-title">4.1 AI Services</h3>
+      <p>FinTrack may use:</p>
+      <ul>
+        <li><strong>Google Gemini API</strong></li>
+        <li>A <strong>custom AI backend</strong> hosted on Render and operated by Techonjo.</li>
+      </ul>
+      <p>Third-party services may have their own privacy practices and data-retention policies. Your use of the AI Adviser is subject to the applicable practices of those services.</p>
+      <h3 class="sub-title">4.2 AI Adviser Limitations</h3>
+      <div class="highlight">
+        <p>The AI Adviser is provided for general financial guidance and informational purposes. AI-generated responses may contain errors, omissions, or inaccurate information. You should independently verify important financial information and should not rely solely on AI-generated responses when making significant financial decisions.</p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="s5">
+      <div class="section-num">05 · Information We Do Not Collect</div>
+      <h2 class="section-title">Information We Do Not Collect</h2>
+      <p>Except where specifically described in this Privacy Policy, Techonjo does not:</p>
+      <ul>
+        <li>Collect your name, phone number, email address, or account credentials through FinTrack.</li>
+        <li>Collect your device's contact list.</li>
+        <li>Sell or share your financial data with third parties for advertising or analytics.</li>
+        <li>Use tracking SDKs or advertising libraries.</li>
+        <li>Transmit raw SMS content to a server.</li>
+        <li>Automatically store your local financial records on Techonjo's servers.</li>
+      </ul>
+      <p>The AI Adviser is an exception to the general local-storage model because information required to process an AI request is transmitted to the applicable AI service as described in Section 4.</p>
+    </section>
+
+    <section class="doc-section" id="s6">
+      <div class="section-num">06 · Local Data Storage</div>
+      <h2 class="section-title">Local Data Storage</h2>
+      <p>FinTrack stores financial information locally on your device using a SQLite database through the <strong>sqflite</strong> package. This may include:</p>
+      <ul>
+        <li>Transactions.</li>
+        <li>Budgets.</li>
+        <li>Notes.</li>
+        <li>Application settings.</li>
+        <li>Recognized transactions imported from eligible SMS messages.</li>
+      </ul>
+      <p>Your local financial information:</p>
+      <ul>
+        <li>Remains on your device.</li>
+        <li>Is not automatically backed up to Techonjo's servers.</li>
+        <li>Can be exported by you through the App's PDF or CSV export functionality.</li>
+        <li>May be deleted when you uninstall FinTrack or clear the App's data.</li>
+      </ul>
+      <div class="highlight">
+        <p>Because this information is stored locally, you are responsible for maintaining appropriate backups using the backup facilities available on your device.</p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="s7">
+      <div class="section-num">07 · Permissions</div>
+      <h2 class="section-title">Permissions</h2>
+      <p>FinTrack may request the following permissions depending on the features you choose to use:</p>
+      <table class="perm-table" aria-label="App permissions">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Purpose</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>READ_SMS / RECEIVE_SMS</td>
+            <td>Detect bank transaction alerts for automatic transaction import</td>
+            <td><span class="badge badge-opt">Optional</span></td>
+          </tr>
+          <tr>
+            <td>USE_BIOMETRIC / USE_FINGERPRINT</td>
+            <td>Lock the App using fingerprint or face authentication</td>
+            <td><span class="badge badge-opt">Optional</span></td>
+          </tr>
+          <tr>
+            <td>CAMERA / READ_EXTERNAL_STORAGE</td>
+            <td>Capture receipts or select images for OCR scanning</td>
+            <td><span class="badge badge-opt">Optional</span></td>
+          </tr>
+          <tr>
+            <td>RECEIVE_BOOT_COMPLETED</td>
+            <td>Reschedule notifications after device restart</td>
+            <td><span class="badge badge-opt">Optional</span></td>
+          </tr>
+          <tr>
+            <td>INTERNET</td>
+            <td>Communicate with the AI Adviser service</td>
+            <td><span class="badge badge-req">AI Feature</span></td>
+          </tr>
+          <tr>
+            <td>POST_NOTIFICATIONS</td>
+            <td>Deliver budget alerts and morning briefing notifications</td>
+            <td><span class="badge badge-opt">Optional</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>You can revoke permissions at any time through your device's system settings. When you revoke a permission, the feature requiring that permission may no longer function, but other features of FinTrack may remain available.</p>
+    </section>
+
+    <section class="doc-section" id="s8">
+      <div class="section-num">08 · Notifications</div>
+      <h2 class="section-title">Notifications</h2>
+      <p>FinTrack may generate local notifications, including:</p>
+      <ul>
+        <li>Morning briefings summarizing recent spending.</li>
+        <li>Budget alerts when you are approaching or exceeding a spending limit.</li>
+      </ul>
+      <p>These notifications are generated on your device and do not require your financial information to be transmitted to a server for notification generation. You can manage or disable notifications through the App or your device's notification settings.</p>
+    </section>
+
+    <section class="doc-section" id="s9">
+      <div class="section-num">09 · Biometric Authentication</div>
+      <h2 class="section-title">Biometric Authentication</h2>
+      <p>FinTrack may allow you to protect the App using your device's biometric authentication system. When biometric authentication is enabled:</p>
+      <ul>
+        <li>FinTrack uses the biometric authentication facilities provided by your device.</li>
+        <li>Biometric processing is handled by the device's operating system.</li>
+        <li><strong>Techonjo does not access, collect, store, or transmit your fingerprint or facial biometric data.</strong></li>
+        <li>FinTrack uses the Android biometric authentication system to request authentication from the device.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="s10">
+      <div class="section-num">10 · Receipt &amp; OCR Features</div>
+      <h2 class="section-title">Receipt &amp; OCR Features</h2>
+      <p>Where available, FinTrack may allow you to capture receipts or select images for optical character recognition (OCR). The App may use <strong>Google ML Kit</strong> for on-device OCR processing.</p>
+      <p>The relevant permission, such as camera or image/storage access, is optional and is only required when you use the corresponding functionality.</p>
+    </section>
+
+    <section class="doc-section" id="s11">
+      <div class="section-num">11 · Data Retention</div>
+      <h2 class="section-title">Data Retention</h2>
+      <h3 class="sub-title">11.1 Local Data</h3>
+      <p>Information stored locally on your device remains there until you delete it through the App, clear the App's data, or uninstall FinTrack.</p>
+      <h3 class="sub-title">11.2 AI Adviser Information</h3>
+      <p>Information transmitted to AI services when you use the AI Adviser is subject to the applicable retention practices of the relevant AI service and Techonjo's AI backend. Techonjo does not retain AI chat information longer than necessary to process the applicable request, subject to applicable technical and service requirements.</p>
+    </section>
+
+    <section class="doc-section" id="s12">
+      <div class="section-num">12 · Children's Privacy</div>
+      <h2 class="section-title">Children's Privacy</h2>
+      <p>FinTrack is not directed toward children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+      <div class="highlight">
+        <p>If you believe that a child under 13 has used FinTrack and provided personal information, please <a href="mailto:josephonoja58@gmail.com">contact us</a> so that we can review the situation and take appropriate action.</p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="s13">
+      <div class="section-num">13 · Data Security</div>
+      <h2 class="section-title">Data Security</h2>
+      <p>We use appropriate technical measures intended to protect information handled by FinTrack. These measures include:</p>
+      <ul>
+        <li>Local storage of financial information on the user's device.</li>
+        <li>The security protections provided by the user's Android device.</li>
+        <li>HTTPS/TLS encryption for applicable API communications.</li>
+        <li>Secure handling of application API credentials during the build and deployment process.</li>
+        <li>Android system-level biometric authentication.</li>
+      </ul>
+      <p>No method of electronic storage or transmission can be guaranteed to be completely secure. You are responsible for maintaining the security of your device and any authentication credentials used to protect FinTrack.</p>
+    </section>
+
+    <section class="doc-section" id="s14">
+      <div class="section-num">14 · Third-Party Services</div>
+      <h2 class="section-title">Third-Party Services</h2>
+      <p>FinTrack may integrate with third-party services to provide specific functionality. These services include:</p>
+      <ul>
+        <li><strong>Google Gemini API</strong> — Used to provide AI Adviser functionality.</li>
+        <li><strong>Google Play</strong> — Used for application distribution and, where applicable, in-app purchases and subscriptions.</li>
+        <li><strong>Google ML Kit</strong> — Used for OCR functionality where receipt scanning is available.</li>
+      </ul>
+      <p>Third-party services operate according to their own applicable terms and privacy practices.</p>
+    </section>
+
+    <section class="doc-section" id="s15">
+      <div class="section-num">15 · Your Privacy Rights &amp; Choices</div>
+      <h2 class="section-title">Your Privacy Rights &amp; Choices</h2>
+      <p>Depending on applicable law, you may have rights concerning information associated with your use of FinTrack. These may include:</p>
+      <ul>
+        <li><strong>Access</strong> — You may request information about data handled by Techonjo in connection with applicable services.</li>
+        <li><strong>Deletion</strong> — You can delete locally stored FinTrack information by deleting the relevant information within the App, clearing App data, or uninstalling the App. For information associated with AI Adviser requests held outside the device, you may contact Techonjo.</li>
+        <li><strong>Correction</strong> — You can edit or delete transactions, budgets, notes, and other editable information directly within FinTrack.</li>
+        <li><strong>Withdrawal of Consent</strong> — You may disable optional features such as SMS Transaction Tracking, biometric authentication, notifications, and AI Adviser functionality through the relevant App or device settings.</li>
+        <li><strong>Data Portability</strong> — FinTrack provides PDF and CSV export functionality for applicable transaction information.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="s16">
+      <div class="section-num">16 · Policy Changes</div>
+      <h2 class="section-title">Changes to This Privacy Policy</h2>
+      <p>Techonjo may update this Privacy Policy from time to time. When changes are made, the "Last Updated" date at the beginning of this policy will be updated. You are encouraged to review this Privacy Policy periodically.</p>
+      <p>Your continued use of FinTrack after an updated Privacy Policy becomes available constitutes your acceptance of the updated policy to the extent permitted by applicable law.</p>
+    </section>
+
+    <section class="doc-section" id="s17">
+      <div class="section-num">17 · Contact Us</div>
+      <h2 class="section-title">Contact Us</h2>
+      <p>If you have questions, concerns, requests, or complaints concerning this Privacy Policy or your information, please contact:</p>
+      <div class="highlight">
+        <p><strong>Techonjo</strong><br>Email: <a href="mailto:josephonoja58@gmail.com">josephonoja58@gmail.com</a></p>
+      </div>
+      <p>We aim to respond to privacy-related enquiries within <strong>30 days</strong>.</p>
+    </section>
+
+    <section class="doc-section" id="s18">
+      <div class="section-num">18 · Governing Principles</div>
+      <h2 class="section-title">Governing Principles</h2>
+      <p>This Privacy Policy is intended to explain transparently how FinTrack handles information. Nothing in this Privacy Policy limits any rights you may have under applicable data-protection or privacy laws.</p>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <span>© 2026 Techonjo. All rights reserved.</span>
+    <span><a href="fintrack-terms.html">Terms &amp; Conditions →</a></span>
+    <span>FinTrack · Privacy Policy</span>
+  </footer>
+
+</body>
+</html>

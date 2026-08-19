@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Techonjo — Onoja Joseph Miracle, software developer building web and mobile applications.">
+  <title>Techonjo — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#home">Techonjo</a>
+    <nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <a class="talk" href="mailto:josephonoja58@gmail.com">Let's talk <b>↗</b></a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="close-btn" id="close-nav" aria-label="Close menu">×</button>
+    <a href="#work" class="mob-link">Work</a>
+    <a href="#about" class="mob-link">About</a>
+    <a href="#contact" class="mob-link">Contact</a>
+    <a href="mailto:josephonoja58@gmail.com" style="color:var(--green);font-size:14px;margin-top:8px">josephonoja58@gmail.com ↗</a>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow"><span></span> Software Developer · Bauchi, Nigeria</div>
+        <h1>I build websites<br>and <em>mobile apps.</em></h1>
+        <p class="lead">I'm Onoja Joseph Miracle, known as <strong>Techonjo</strong>. I turn ideas into practical digital products for businesses, teams and everyday users.</p>
+        <div class="actions">
+          <a class="btn fill" href="#work">View my work <span>↓</span></a>
+          <a class="btn outline" href="mailto:josephonoja58@gmail.com">Email me <span>↗</span></a>
+        </div>
+        <div class="facts"><span>Developer since 2020</span><span>Full-stack</span><span>Web + Mobile</span></div>
+      </div>
+
+      <div class="portrait">
+        <img src="assets/profile.jpg" alt="Onoja Joseph Miracle">
+        <div class="portrait-label"><small>01</small><strong>Techonjo</strong><span>Building useful software.</span></div>
+      </div>
+    </section>
+
+    <section class="work section" id="work">
+      <div class="heading">
+        <div><div class="eyebrow">Selected work</div><h2>Built by me.</h2></div>
+        <p>Real products, not concept screens.</p>
+      </div>
+
+      <div class="feature-grid">
+        <a class="feature feature-green" href="https://9jafarm.com.ng" target="_blank" rel="noopener">
+          <div class="feature-copy">
+            <div class="project-meta"><span>01 · WEB</span><span>↗</span></div>
+            <div>
+              <div class="type">Agriculture platform</div>
+              <h3>9jaFarm</h3>
+              <p>Web platform for 9jaFarm, built around practical digital tools for modern agriculture.</p>
+              <div class="tags"><span>WordPress</span><span>JavaScript</span><span>Web</span></div>
+            </div>
+          </div>
+        </a>
+
+        <div class="app-showcase">
+          <div class="project-meta"><span>02 · MOBILE</span><span>9jaFarm Hydroponics</span></div>
+          <div class="phones">
+            <div class="phone phone-back"><img src="assets/hydropro.jpeg" alt="9jaFarm Hydroponics app screen"></div>
+            <div class="phone phone-front"><img src="assets/9jafarm-farmer.jpg" alt="9jaFarm Farmer's Farm app screen"></div>
+          </div>
+          <div class="app-copy">
+            <div class="type">Farmer's Farm · IoT</div>
+            <h3>9jaFarm Hydroponics</h3>
+            <p>IoT monitoring interface showing system status and live farming measurements including pH, TDS and temperature.</p>
+            <div class="tags"><span>Flutter</span><span>Dart</span><span>IoT</span></div>
+          </div>
+        </div>
+
+        <div class="app-showcase">
+          <div class="project-meta"><span>03 · MOBILE</span><span>FinTrack App</span></div>
+          <div class="phones">
+            <div class="phone phone-back"><img src="assets/Fintrack.jpeg" alt="FinTrack app screen"></div>
+            <div class="phone phone-front"><img src="assets/fintrackwhite.jpeg" alt="FinTrack app screen"></div>
+          </div>
+          <div class="app-copy">
+            <div class="type">Finance · Productivity</div>
+            <h3>FinTrack</h3>
+            <p>A finance and productivity application for tracking money, budgets, savings, subscriptions and personal tasks.</p>
+            <div class="tags"><span>Flutter</span><span>Dart</span><span>Mobile</span></div>
+            <div class="legal-links">
+              <a href="fintrack-privacy-policy.html">Privacy Policy ↗</a>
+              <a href="fintrack-terms.html">Terms &amp; Conditions ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-showcase">
+          <div class="project-meta"><span>04 · MOBILE</span><span>9jaFarm Open field</span></div>
+          <div class="phones">
+            <div class="phone phone-back"><img src="assets/9jafarm-hydroponics.jpg" alt="9jaFarm Hydroponics app screen"></div>
+            <div class="phone phone-front"><img src="assets/9jafarmweather.jpeg" alt="9jaFarm Hydroponics app screen"></div>
+          </div>
+          <div class="app-copy">
+            <div class="type">MOBILE · OPEN FIELD</div>
+            <h3>9jaFarm Open Field</h3>
+            <p>A mobile application created for open-field farming workflows and day to day farm operations.</p>
+            <div class="tags"><span>Flutter</span><span>Dart</span><span>IoT</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-list">
+        <article class="row-project">
+          <div class="number">05</div><div><div class="type">WEB</div><h3>Hasanta Integrated Farm</h3></div>
+          <p>Business website for an aquaculture enterprise, presenting its products, services, training and supply offering.</p>
+          <a class="arrow" href="https://hasantafarm.com" target="_blank" rel="noopener">View site ↗</a>
+        </article>
+
+        <article class="row-project">
+          <div class="number">06</div><div><div class="type">WEB</div><h3>9jaFarm website</h3></div>
+          <p>Business website for an agriculture enterprise, presenting its products, services, training and supply offering.</p>
+          <a class="arrow" href="https://9jafarm.com.ng" target="_blank" rel="noopener">View site ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="side"><div class="eyebrow">About</div><span>02</span></div>
+      <div>
+        <h2>I care about the part<br><em>people actually use.</em></h2>
+        <p class="about-text">I've been developing software since 2020, working across websites and mobile applications. I also teach, which has made me comfortable breaking technical ideas down and building products with the person using them in mind.</p>
+        <div class="skill-line">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Flutter</span><span>Dart</span><span>WordPress</span><span>Git</span><span>GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="eyebrow">Contact</div>
+      <h2>Have something worth<br><em>building?</em></h2>
+      <div class="contact-bottom">
+        <a class="big-email" href="mailto:josephonoja58@gmail.com">josephonoja58@gmail.com <span>↗</span></a>
+        <div><a href="tel:+2348106177969">+234 810 617 7969</a><a href="https://github.com/techonjo" target="_blank" rel="noopener">github.com/techonjo ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Techonjo</span><span>Onoja Joseph Miracle</span><span>Bauchi, Nigeria</span></footer>
+  <script src="script.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    const closeNav  = document.getElementById('close-nav');
+    const mobLinks  = document.querySelectorAll('.mob-link');
+    hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+    closeNav.addEventListener('click',  () => mobileNav.classList.remove('open'));
+    mobLinks.forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+  </script>
+</body>
+</html>

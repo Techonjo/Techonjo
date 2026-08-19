@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinTrack Terms and Conditions — the terms governing your use of the FinTrack personal finance app by Techonjo.">
+  <title>Terms &amp; Conditions — FinTrack by Techonjo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0d0b;--panel:#101511;--panel2:#151b16;--text:#eef1eb;--muted:#8e978e;--line:#29302a;--green:#a9df72;--green2:#6f9f45;--max:800px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
+    a{color:var(--green);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Nav */
+    .nav{width:min(1160px,calc(100% - 44px));height:84px;margin:auto;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+    .brand{font:700 22px "Space Grotesk";letter-spacing:-1px;color:var(--green)}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{font-size:13px;color:#b7beb6}
+    .nav-links a:hover{color:var(--green);text-decoration:none}
+    .back-btn{border:1px solid var(--line);padding:9px 14px;border-radius:3px;font-size:12px;color:#b7beb6;display:flex;align-items:center;gap:6px;transition:color .2s,border-color .2s}
+    .back-btn:hover{color:var(--green);border-color:var(--green);text-decoration:none}
+
+    /* Hero banner */
+    .hero-banner{border-bottom:1px solid var(--line);background:linear-gradient(145deg,#0f1a10,#0a0d0b);padding:72px 22px 64px;text-align:center}
+    .hero-banner .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:10px;font-family:"Space Grotesk",sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--green);margin-bottom:26px}
+    .hero-banner .pill span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green)}
+    .hero-banner h1{font:700 clamp(38px,6vw,64px) "Space Grotesk";letter-spacing:-2.5px;line-height:1;margin-bottom:18px}
+    .hero-banner h1 em{font-style:normal;color:var(--green)}
+    .hero-banner .meta{color:var(--muted);font-size:13px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+    .hero-banner .meta span+span::before{content:"·";margin-right:22px;color:var(--green2)}
+
+    /* Content */
+    .doc-wrap{width:min(var(--max),calc(100% - 44px));margin:72px auto 100px}
+
+    /* TOC */
+    .toc{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:28px 32px;margin-bottom:64px}
+    .toc-label{font:600 10px "Space Grotesk";letter-spacing:1.7px;text-transform:uppercase;color:var(--green);margin-bottom:18px}
+    .toc ol{padding-left:20px;display:grid;grid-template-columns:1fr 1fr;gap:6px 32px}
+    .toc ol li{font-size:13px}
+    .toc ol li a{color:var(--muted)}
+    .toc ol li a:hover{color:var(--green)}
+
+    /* Sections */
+    .doc-section{border-top:1px solid var(--line);padding-top:48px;margin-top:48px}
+    .doc-section:first-of-type{border-top:none;margin-top:0;padding-top:0}
+    .section-num{font:600 10px "Space Grotesk";letter-spacing:1.7px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+    h2.section-title{font:700 clamp(24px,4vw,34px) "Space Grotesk";letter-spacing:-1.2px;line-height:1.1;margin-bottom:20px}
+    h3.sub-title{font:600 15px "Space Grotesk";letter-spacing:-0.4px;color:var(--text);margin:28px 0 10px}
+    p{color:var(--muted);font-size:15px;margin-bottom:14px}
+    p:last-child{margin-bottom:0}
+    p strong{color:var(--text);font-weight:600}
+    ul{padding-left:22px;margin-bottom:14px}
+    li{color:var(--muted);font-size:15px;margin-bottom:6px;line-height:1.7}
+    li strong{color:var(--text)}
+
+    /* Highlight */
+    .highlight{border-left:3px solid var(--green);background:var(--panel);padding:16px 20px;border-radius:0 4px 4px 0;margin:20px 0}
+    .highlight p{font-size:14px;margin:0}
+
+    /* Warning box */
+    .warning{border-left:3px solid #e07a3c;background:#1a1208;padding:16px 20px;border-radius:0 4px 4px 0;margin:20px 0}
+    .warning p{font-size:14px;margin:0;color:#c9a87a}
+
+    /* Footer */
+    footer{width:min(1160px,calc(100% - 44px));margin:auto;border-top:1px solid var(--line);padding:25px 0 34px;color:#5f685f;font-size:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    footer a{color:var(--green);font-size:10px}
+
+    /* Responsive */
+    @media(max-width:640px){.toc ol{grid-template-columns:1fr}.nav-links{display:none}}
+    @media(max-width:480px){.nav,footer{width:calc(100% - 28px)}.doc-wrap{width:calc(100% - 28px)}}
+  </style>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <a class="brand" href="index.html">Techonjo</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a class="back-btn" href="index.html">← Back to portfolio</a>
+  </header>
+
+  <div class="hero-banner" role="region" aria-label="Page header">
+    <div class="pill"><span></span> Legal Document</div>
+    <h1>Terms &amp; <em>Conditions</em></h1>
+    <div class="meta">
+      <span>FinTrack by Techonjo</span>
+      <span>Effective Date: August 19, 2026</span>
+      <span>Last Updated: August 19, 2026</span>
+    </div>
+  </div>
+
+  <main class="doc-wrap" id="main-content">
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-label">Table of Contents</div>
+      <ol>
+        <li><a href="#t1">Acceptance of Terms</a></li>
+        <li><a href="#t2">Description of FinTrack</a></li>
+        <li><a href="#t3">Eligibility</a></li>
+        <li><a href="#t4">Licence to Use</a></li>
+        <li><a href="#t5">Permitted &amp; Prohibited Use</a></li>
+        <li><a href="#t6">SMS Transaction Tracking</a></li>
+        <li><a href="#t7">AI Adviser</a></li>
+        <li><a href="#t8">In-App Purchases &amp; Subscriptions</a></li>
+        <li><a href="#t9">Intellectual Property</a></li>
+        <li><a href="#t10">Privacy</a></li>
+        <li><a href="#t11">Disclaimers</a></li>
+        <li><a href="#t12">Limitation of Liability</a></li>
+        <li><a href="#t13">Indemnification</a></li>
+        <li><a href="#t14">Third-Party Services</a></li>
+        <li><a href="#t15">Modifications to FinTrack</a></li>
+        <li><a href="#t16">Termination</a></li>
+        <li><a href="#t17">Changes to These Terms</a></li>
+        <li><a href="#t18">Governing Law</a></li>
+        <li><a href="#t19">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <!-- Preamble -->
+    <section class="doc-section" id="t1">
+      <div class="section-num">01 · Acceptance of Terms</div>
+      <h2 class="section-title">Acceptance of Terms</h2>
+      <p>These Terms and Conditions <strong>("Terms")</strong> constitute a legally binding agreement between you and Techonjo <strong>("Techonjo," "we," "us," or "our")</strong> governing your access to and use of the FinTrack mobile application <strong>("FinTrack," "the App," or "the Application")</strong>.</p>
+      <div class="highlight">
+        <p><strong>By downloading, installing, or using FinTrack, you confirm that you have read, understood, and agree to be bound by these Terms.</strong> If you do not agree to these Terms, do not install or use FinTrack.</p>
+      </div>
+      <p>These Terms should be read together with our <a href="fintrack-privacy-policy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+    </section>
+
+    <!-- Description -->
+    <section class="doc-section" id="t2">
+      <div class="section-num">02 · Description of FinTrack</div>
+      <h2 class="section-title">Description of FinTrack</h2>
+      <p>FinTrack is a personal finance and productivity application developed by Techonjo. The App may provide features including, but not limited to:</p>
+      <ul>
+        <li>Transaction recording and categorization.</li>
+        <li>Budget creation and monitoring.</li>
+        <li>Savings tracking.</li>
+        <li>Subscription management.</li>
+        <li>Personal task and note organization.</li>
+        <li>Optional SMS-based automatic transaction detection.</li>
+        <li>An optional AI-powered financial adviser feature.</li>
+        <li>Receipt scanning via optical character recognition (OCR).</li>
+        <li>PDF and CSV data export.</li>
+        <li>Local biometric app protection.</li>
+      </ul>
+      <p>Features may vary depending on the version of FinTrack installed and may change over time. Some features may require an active internet connection.</p>
+    </section>
+
+    <!-- Eligibility -->
+    <section class="doc-section" id="t3">
+      <div class="section-num">03 · Eligibility</div>
+      <h2 class="section-title">Eligibility</h2>
+      <p>You must be at least <strong>13 years of age</strong> to use FinTrack. By using the App, you represent and warrant that you meet this requirement.</p>
+      <p>If you are using FinTrack on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
+    </section>
+
+    <!-- Licence -->
+    <section class="doc-section" id="t4">
+      <div class="section-num">04 · Licence to Use</div>
+      <h2 class="section-title">Licence to Use</h2>
+      <p>Subject to your compliance with these Terms, Techonjo grants you a limited, non-exclusive, non-transferable, revocable licence to:</p>
+      <ul>
+        <li>Download and install FinTrack on Android devices that you own or control.</li>
+        <li>Use FinTrack for your personal, non-commercial purposes.</li>
+      </ul>
+      <p>This licence does not include any right to sublicense, sell, resell, transfer, assign, or otherwise exploit FinTrack or any part of it.</p>
+    </section>
+
+    <!-- Permitted & Prohibited Use -->
+    <section class="doc-section" id="t5">
+      <div class="section-num">05 · Permitted &amp; Prohibited Use</div>
+      <h2 class="section-title">Permitted &amp; Prohibited Use</h2>
+      <h3 class="sub-title">5.1 Permitted Use</h3>
+      <p>You may use FinTrack to manage your personal finances, budgets, savings, subscriptions, and tasks in accordance with these Terms and applicable law.</p>
+      <h3 class="sub-title">5.2 Prohibited Use</h3>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Copy, modify, distribute, sell, or lease any part of FinTrack or its underlying software.</li>
+        <li>Reverse engineer, decompile, or attempt to extract the source code of FinTrack.</li>
+        <li>Use FinTrack in any manner that violates applicable law or regulation.</li>
+        <li>Use FinTrack to process or store information belonging to third parties without their consent.</li>
+        <li>Attempt to gain unauthorized access to FinTrack or its related systems.</li>
+        <li>Use FinTrack for any commercial purpose without prior written consent from Techonjo.</li>
+        <li>Interfere with or disrupt the integrity or performance of FinTrack or related services.</li>
+      </ul>
+    </section>
+
+    <!-- SMS -->
+    <section class="doc-section" id="t6">
+      <div class="section-num">06 · SMS Transaction Tracking</div>
+      <h2 class="section-title">SMS Transaction Tracking</h2>
+      <p>FinTrack's SMS Transaction Tracking feature is optional and, when enabled, reads SMS messages from bank senders you select to automatically detect and import transaction records.</p>
+      <ul>
+        <li>You are solely responsible for ensuring you have the right to grant FinTrack access to SMS messages on your device.</li>
+        <li>SMS processing occurs locally on your device. Techonjo does not receive or store your raw SMS content.</li>
+        <li>You may disable this feature at any time through the App's settings or your device's permission manager.</li>
+      </ul>
+      <div class="highlight">
+        <p>Using the SMS feature does not authorize FinTrack to send SMS messages on your behalf. FinTrack only reads messages; it does not compose, send, or delete SMS messages.</p>
+      </div>
+    </section>
+
+    <!-- AI Adviser -->
+    <section class="doc-section" id="t7">
+      <div class="section-num">07 · AI Adviser</div>
+      <h2 class="section-title">AI Adviser</h2>
+      <p>The AI Adviser is an optional feature that transmits certain financial information to third-party AI services to generate personalized insights.</p>
+      <h3 class="sub-title">7.1 Nature of AI Advice</h3>
+      <div class="warning">
+        <p><strong>The AI Adviser is not a substitute for professional financial advice.</strong> AI-generated responses are provided for general informational purposes only and may contain errors, omissions, or inaccurate information. You should independently verify all financial information and consult a qualified financial professional before making significant financial decisions.</p>
+      </div>
+      <h3 class="sub-title">7.2 Your Responsibility</h3>
+      <p>By using the AI Adviser, you acknowledge and agree that:</p>
+      <ul>
+        <li>You use AI-generated insights at your own risk.</li>
+        <li>Techonjo is not liable for any financial loss or damage arising from reliance on AI-generated responses.</li>
+        <li>Information you submit to the AI Adviser may be transmitted to and processed by third-party AI services, including Google Gemini API.</li>
+      </ul>
+      <h3 class="sub-title">7.3 Third-Party AI Terms</h3>
+      <p>Your use of the AI Adviser is also subject to the applicable terms and policies of the underlying AI services. We encourage you to review the terms of any applicable third-party AI service.</p>
+    </section>
+
+    <!-- In-App Purchases -->
+    <section class="doc-section" id="t8">
+      <div class="section-num">08 · In-App Purchases &amp; Subscriptions</div>
+      <h2 class="section-title">In-App Purchases &amp; Subscriptions</h2>
+      <p>FinTrack may offer optional in-app purchases or subscriptions that unlock additional features. Where such purchases are available:</p>
+      <ul>
+        <li>All purchases are processed through <strong>Google Play</strong> and are subject to Google Play's terms and refund policies.</li>
+        <li>Subscription fees are charged to your Google Play account at the start of each billing period.</li>
+        <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period.</li>
+        <li>You can manage and cancel subscriptions through your Google Play account settings.</li>
+        <li>Techonjo does not process payment card information directly.</li>
+      </ul>
+      <p>Prices for in-app purchases may change. Techonjo will provide reasonable notice of price changes where required by applicable law or platform policy.</p>
+    </section>
+
+    <!-- IP -->
+    <section class="doc-section" id="t9">
+      <div class="section-num">09 · Intellectual Property</div>
+      <h2 class="section-title">Intellectual Property</h2>
+      <p>FinTrack, including its design, code, graphics, features, and content created by Techonjo, is the intellectual property of Techonjo and is protected by applicable intellectual property laws.</p>
+      <p>These Terms do not transfer any intellectual property rights to you. You may not use Techonjo's name, logo, or trademarks without prior written consent.</p>
+      <p><strong>Your data remains yours.</strong> Techonjo does not claim ownership of the financial data, notes, or other content you create or import within FinTrack.</p>
+    </section>
+
+    <!-- Privacy -->
+    <section class="doc-section" id="t10">
+      <div class="section-num">10 · Privacy</div>
+      <h2 class="section-title">Privacy</h2>
+      <p>Your use of FinTrack is subject to our <a href="fintrack-privacy-policy.html">Privacy Policy</a>, which describes how we handle information in connection with FinTrack. By using FinTrack, you agree to the practices described in the Privacy Policy.</p>
+      <p>FinTrack is designed to store most of your financial information locally on your device. Please review the Privacy Policy for full details.</p>
+    </section>
+
+    <!-- Disclaimers -->
+    <section class="doc-section" id="t11">
+      <div class="section-num">11 · Disclaimers</div>
+      <h2 class="section-title">Disclaimers</h2>
+      <div class="warning">
+        <p><strong>FinTrack is provided "as is" and "as available" without warranties of any kind, express or implied.</strong> To the fullest extent permitted by applicable law, Techonjo disclaims all warranties, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+      </div>
+      <p>Techonjo does not warrant that:</p>
+      <ul>
+        <li>FinTrack will be uninterrupted, error-free, or free of viruses or other harmful components.</li>
+        <li>Any results obtained through the use of FinTrack will be accurate or reliable.</li>
+        <li>Defects in FinTrack will be corrected.</li>
+      </ul>
+      <p>FinTrack is a personal finance tracking tool and does not constitute financial, investment, legal, or tax advice.</p>
+    </section>
+
+    <!-- Limitation of Liability -->
+    <section class="doc-section" id="t12">
+      <div class="section-num">12 · Limitation of Liability</div>
+      <h2 class="section-title">Limitation of Liability</h2>
+      <p>To the fullest extent permitted by applicable law, Techonjo and its affiliates, officers, employees, agents, and licensors shall not be liable for any:</p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, or punitive damages.</li>
+        <li>Loss of profits, data, goodwill, or other intangible losses.</li>
+        <li>Damages resulting from your use of or inability to use FinTrack.</li>
+        <li>Damages resulting from unauthorized access to or alteration of your data.</li>
+        <li>Damages arising from reliance on AI-generated financial advice.</li>
+      </ul>
+      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain types of damages, Techonjo's liability shall be limited to the maximum extent permitted by law.</p>
+    </section>
+
+    <!-- Indemnification -->
+    <section class="doc-section" id="t13">
+      <div class="section-num">13 · Indemnification</div>
+      <h2 class="section-title">Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Techonjo and its affiliates, officers, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable legal fees, arising out of or in any way connected with:</p>
+      <ul>
+        <li>Your access to or use of FinTrack.</li>
+        <li>Your violation of these Terms.</li>
+        <li>Your violation of any applicable law or the rights of any third party.</li>
+      </ul>
+    </section>
+
+    <!-- Third-Party Services -->
+    <section class="doc-section" id="t14">
+      <div class="section-num">14 · Third-Party Services</div>
+      <h2 class="section-title">Third-Party Services</h2>
+      <p>FinTrack may integrate with or link to third-party services. These include:</p>
+      <ul>
+        <li><strong>Google Gemini API</strong> — AI Adviser functionality.</li>
+        <li><strong>Google Play</strong> — App distribution and in-app purchases.</li>
+        <li><strong>Google ML Kit</strong> — On-device OCR for receipt scanning.</li>
+      </ul>
+      <p>Techonjo is not responsible for the content, policies, or practices of any third-party service. Your use of third-party services is governed by their respective terms and privacy policies. Techonjo encourages you to review those terms.</p>
+    </section>
+
+    <!-- Modifications to FinTrack -->
+    <section class="doc-section" id="t15">
+      <div class="section-num">15 · Modifications to FinTrack</div>
+      <h2 class="section-title">Modifications to FinTrack</h2>
+      <p>Techonjo reserves the right to modify, update, suspend, or discontinue FinTrack or any part of it at any time, with or without notice. Techonjo shall not be liable to you or any third party for any modification, suspension, or discontinuation of FinTrack.</p>
+      <p>Continued use of FinTrack after any modification constitutes your acceptance of the modified App.</p>
+    </section>
+
+    <!-- Termination -->
+    <section class="doc-section" id="t16">
+      <div class="section-num">16 · Termination</div>
+      <h2 class="section-title">Termination</h2>
+      <p>These Terms are effective until terminated. Your rights under these Terms will terminate automatically without notice from Techonjo if you fail to comply with any provision of these Terms.</p>
+      <p>Upon termination:</p>
+      <ul>
+        <li>All licences granted to you under these Terms will immediately cease.</li>
+        <li>You must stop using FinTrack and delete all copies from your devices.</li>
+      </ul>
+      <p>You may also terminate these Terms at any time by uninstalling FinTrack from all your devices. Termination does not entitle you to a refund of any in-app purchases or subscription fees already paid, except where required by applicable law or Google Play's refund policies.</p>
+    </section>
+
+    <!-- Changes to Terms -->
+    <section class="doc-section" id="t17">
+      <div class="section-num">17 · Changes to These Terms</div>
+      <h2 class="section-title">Changes to These Terms</h2>
+      <p>Techonjo may update these Terms from time to time. When changes are made, the "Last Updated" date at the top of this page will be revised. You are encouraged to review these Terms periodically.</p>
+      <p>Your continued use of FinTrack after updated Terms are published constitutes your acceptance of the updated Terms to the extent permitted by applicable law.</p>
+    </section>
+
+    <!-- Governing Law -->
+    <section class="doc-section" id="t18">
+      <div class="section-num">18 · Governing Law</div>
+      <h2 class="section-title">Governing Law</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria, without regard to its conflict of law provisions.</p>
+      <p>Any disputes arising from these Terms or your use of FinTrack shall be subject to the exclusive jurisdiction of the courts of Nigeria, unless otherwise required by applicable law.</p>
+      <p>Nothing in these Terms limits any statutory rights you may have under applicable consumer protection or other mandatory laws in your jurisdiction.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="doc-section" id="t19">
+      <div class="section-num">19 · Contact Us</div>
+      <h2 class="section-title">Contact Us</h2>
+      <p>If you have any questions, concerns, or requests relating to these Terms, please contact:</p>
+      <div class="highlight">
+        <p><strong>Techonjo</strong><br>Email: <a href="mailto:josephonoja58@gmail.com">josephonoja58@gmail.com</a></p>
+      </div>
+      <p>We aim to respond to enquiries within <strong>30 days</strong>.</p>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <span>© 2026 Techonjo. All rights reserved.</span>
+    <span><a href="fintrack-privacy-policy.html">← Privacy Policy</a></span>
+    <span>FinTrack · Terms &amp; Conditions</span>
+  </footer>
+
+</body>
+</html>
