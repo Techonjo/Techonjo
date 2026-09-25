@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinTrack Account & Data Deletion — how to delete your FinTrack account and locally stored data.">
+  <title>Account &amp; Data Deletion — FinTrack by Techonjo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0d0b;--panel:#101511;--panel2:#151b16;--text:#eef1eb;--muted:#8e978e;--line:#29302a;--green:#a9df72;--green2:#6f9f45;--max:800px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
+    a{color:var(--green);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Nav */
+    .nav{width:min(1160px,calc(100% - 44px));height:84px;margin:auto;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+    .brand{font:700 22px "Space Grotesk";letter-spacing:-1px;color:var(--green)}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{font-size:13px;color:#b7beb6}
+    .nav-links a:hover{color:var(--green);text-decoration:none}
+    .back-btn{border:1px solid var(--line);padding:9px 14px;border-radius:3px;font-size:12px;color:#b7beb6;display:flex;align-items:center;gap:6px;transition:color .2s,border-color .2s}
+    .back-btn:hover{color:var(--green);border-color:var(--green);text-decoration:none}
+
+    /* Hero banner */
+    .hero-banner{border-bottom:1px solid var(--line);background:linear-gradient(145deg,#0f1a10,#0a0d0b);padding:72px 22px 64px;text-align:center}
+    .hero-banner .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:10px;font-family:"Space Grotesk",sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--green);margin-bottom:26px}
+    .hero-banner .pill span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green)}
+    .hero-banner h1{font:700 clamp(38px,6vw,64px) "Space Grotesk";letter-spacing:-2.5px;line-height:1;margin-bottom:18px}
+    .hero-banner h1 em{font-style:normal;color:var(--green)}
+    .hero-banner .meta{color:var(--muted);font-size:13px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+    .hero-banner .meta span+span::before{content:"·";margin-right:22px;color:var(--green2)}
+
+    /* Content */
+    .doc-wrap{width:min(var(--max),calc(100% - 44px));margin:72px auto 100px}
+
+    /* Sections */
+    .doc-section{border-top:1px solid var(--line);padding-top:48px;margin-top:48px}
+    .doc-section:first-of-type{border-top:none;margin-top:0;padding-top:0}
+    .section-num{font:600 10px "Space Grotesk";letter-spacing:1.7px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+    h2.section-title{font:700 clamp(24px,4vw,34px) "Space Grotesk";letter-spacing:-1.2px;line-height:1.1;margin-bottom:20px}
+    h3.sub-title{font:600 15px "Space Grotesk";letter-spacing:-0.4px;color:var(--text);margin:28px 0 10px}
+    p{color:var(--muted);font-size:15px;margin-bottom:14px}
+    p:last-child{margin-bottom:0}
+    p strong{color:var(--text);font-weight:600}
+    ul,ol.content-list{padding-left:22px;margin-bottom:14px}
+    li{color:var(--muted);font-size:15px;margin-bottom:6px;line-height:1.7}
+    li strong{color:var(--text)}
+
+    /* Highlight */
+    .highlight{border-left:3px solid var(--green);background:var(--panel);padding:16px 20px;border-radius:0 4px 4px 0;margin:20px 0}
+    .highlight p{font-size:14px;margin:0}
+
+    /* Numbered steps */
+    .steps{counter-reset:step;padding-left:0;list-style:none;margin-bottom:14px}
+    .steps li{counter-increment:step;display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:15px}
+    .steps li:last-child{border-bottom:none}
+    .steps li::before{content:counter(step);flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font:600 11px "Space Grotesk";color:var(--green);line-height:28px;text-align:center}
+
+    /* Info card */
+    .info-card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px 28px;margin:24px 0}
+    .info-card .card-icon{font-size:22px;margin-bottom:10px}
+    .info-card h3{font:600 15px "Space Grotesk";color:var(--text);margin-bottom:8px}
+    .info-card p{font-size:14px;margin:0}
+
+    /* Footer */
+    footer{width:min(1160px,calc(100% - 44px));margin:auto;border-top:1px solid var(--line);padding:25px 0 34px;color:#5f685f;font-size:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    footer a{color:var(--green);font-size:10px}
+
+    /* Responsive */
+    @media(max-width:640px){.nav-links{display:none}}
+    @media(max-width:480px){.nav,footer{width:calc(100% - 28px)}.doc-wrap{width:calc(100% - 28px)}}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Site navigation">
+    <a class="brand" href="index.html">Techonjo</a>
+    <div class="nav-links">
+      <a href="fintrack-privacy-policy.html">Privacy Policy</a>
+      <a href="fintrack-terms.html">Terms &amp; Conditions</a>
+    </div>
+    <a class="back-btn" href="index.html">&#8592; Back to site</a>
+  </nav>
+
+  <div class="hero-banner" role="banner">
+    <div class="pill"><span></span>FinTrack &middot; Data &amp; Account</div>
+    <h1>Account &amp; Data<br><em>Deletion</em></h1>
+    <div class="meta">
+      <span>FinTrack by Techonjo</span>
+      <span>Effective: 25 September 2026</span>
+      <span>Local-first &middot; SQLite</span>
+    </div>
+  </div>
+
+  <main class="doc-wrap" id="main-content">
+
+    <!-- Overview -->
+    <section class="doc-section" id="s1">
+      <div class="section-num">Overview</div>
+      <h2 class="section-title">Your Data, Your Control</h2>
+      <p>FinTrack stores account and financial data <strong>locally on your device</strong> using SQLite. No account data is transmitted to or stored on external servers, except where you explicitly use the AI Adviser feature.</p>
+      <p>You can permanently delete your FinTrack account and all associated local data at any time using the options described below.</p>
+    </section>
+
+    <!-- Delete via App -->
+    <section class="doc-section" id="s2">
+      <div class="section-num">Option 1 &middot; In-App Deletion</div>
+      <h2 class="section-title">Delete Account Inside FinTrack</h2>
+      <p>The quickest way to remove your account and all associated data is directly within the app.</p>
+      <ol class="steps">
+        <li>Open the <strong>FinTrack</strong> app on your device.</li>
+        <li>Navigate to <strong>Settings</strong> (or your Profile).</li>
+        <li>Tap <strong>Delete Account</strong>.</li>
+        <li>Confirm the deletion when prompted.</li>
+      </ol>
+      <div class="highlight">
+        <p>This action <strong>permanently removes</strong> your account profile and all financial data stored on the device. It cannot be undone.</p>
+      </div>
+    </section>
+
+    <!-- Delete via Device -->
+    <section class="doc-section" id="s3">
+      <div class="section-num">Option 2 &middot; Device-Level Deletion</div>
+      <h2 class="section-title">Clear App Storage or Uninstall</h2>
+      <p>You can also erase all FinTrack data by using your device's built-in storage management tools.</p>
+
+      <h3 class="sub-title">Clear App Data (Android)</h3>
+      <ol class="steps">
+        <li>Go to <strong>Settings &rarr; Apps &rarr; FinTrack</strong>.</li>
+        <li>Tap <strong>Storage &amp; Cache</strong>.</li>
+        <li>Tap <strong>Clear Storage</strong> (or Clear Data) and confirm.</li>
+      </ol>
+
+      <h3 class="sub-title">Uninstall the App</h3>
+      <p>Uninstalling FinTrack from your device removes the app and all locally stored data, including the SQLite database.</p>
+      <div class="highlight">
+        <p>Clearing storage or uninstalling the app deletes <strong>all local FinTrack data</strong> including transactions, budgets, savings, subscriptions, tasks, and account information.</p>
+      </div>
+    </section>
+
+    <!-- What is deleted -->
+    <section class="doc-section" id="s4">
+      <div class="section-num">What Gets Deleted</div>
+      <h2 class="section-title">Data Removed Upon Deletion</h2>
+      <p>Any deletion method above removes the following data stored locally on your device:</p>
+      <ul>
+        <li><strong>Account profile</strong> &mdash; name, PIN, biometric settings, and preferences</li>
+        <li><strong>Transactions</strong> &mdash; all income and expense records</li>
+        <li><strong>Budgets</strong> &mdash; budget categories and limits</li>
+        <li><strong>Savings goals</strong> &mdash; all goals and progress data</li>
+        <li><strong>Subscriptions</strong> &mdash; tracked subscription records</li>
+        <li><strong>Tasks &amp; notes</strong> &mdash; personal productivity data</li>
+        <li><strong>App settings</strong> &mdash; notifications, theme, and other preferences</li>
+      </ul>
+
+      <div class="info-card">
+        <div class="card-icon">&#129302;</div>
+        <h3>AI Adviser Data</h3>
+        <p>If you used the AI Adviser feature, query data may have been processed by a third-party AI provider. FinTrack does not retain these queries on Techonjo servers. For questions about data handled through the AI Adviser, contact us using the details below.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="doc-section" id="s5">
+      <div class="section-num">Need Help?</div>
+      <h2 class="section-title">Contact Us</h2>
+      <p>If you need assistance with deletion or have questions about data handled through the AI Adviser, contact:</p>
+      <div class="highlight">
+        <p><strong>Techonjo</strong><br>Email: <a href="mailto:josephonoja58@gmail.com">josephonoja58@gmail.com</a></p>
+      </div>
+      <p>We aim to respond to all data-related requests within <strong>30 days</strong>.</p>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <span>&copy; 2026 Techonjo. All rights reserved.</span>
+    <span><a href="fintrack-privacy-policy.html">Privacy Policy &rarr;</a></span>
+    <span>FinTrack &middot; Account &amp; Data Deletion</span>
+  </footer>
+
+</body>
+</html>
