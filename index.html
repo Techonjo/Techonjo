@@ -1,190 +1,393 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Techonjo — Onoja Joseph Miracle, software developer building web and mobile applications.">
+  <meta name="description" content="Techonjo — Onoja Joseph Miracle, software developer building websites and mobile applications people can use.">
   <title>Techonjo — Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('techonjo-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </head>
-<body>
-  <header class="nav">
-    <a class="brand" href="#home">Techonjo</a>
-    <nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-    <a class="talk" href="mailto:josephonoja58@gmail.com">Let's talk <b>↗</b></a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+<body class="blueprint-grid">
+
+  <!-- Toast Notification for Copying Email -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg class="toast-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toast-msg">Email copied to clipboard</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav-wrapper">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Techonjo</a>
+      
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Dark Mode Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark mode (or press D)">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
+  <!-- Mobile Nav Overlay -->
   <div class="mobile-nav" id="mobile-nav">
-    <button class="close-btn" id="close-nav" aria-label="Close menu">×</button>
+    <button class="close-btn" id="close-nav" aria-label="Close menu">✕</button>
     <a href="#work" class="mob-link">Work</a>
     <a href="#about" class="mob-link">About</a>
     <a href="#contact" class="mob-link">Contact</a>
-    <a href="mailto:josephonoja58@gmail.com" style="color:var(--green);font-size:14px;margin-top:8px">josephonoja58@gmail.com ↗</a>
+    <button class="mob-theme-toggle" id="mob-theme-toggle">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <span>Switch Theme</span>
+    </button>
+    <a href="mailto:josephonoja58@gmail.com" class="mob-email">josephonoja58@gmail.com ↗</a>
   </div>
 
   <main>
-    <section class="hero" id="home">
-      <div>
-        <div class="eyebrow"><span></span> Software Developer · Bauchi, Nigeria</div>
-        <h1>I build websites<br>and <em>mobile apps.</em></h1>
-        <p class="lead">I'm Onoja Joseph Miracle, known as <strong>Techonjo</strong>. I turn ideas into practical digital products for businesses, teams and everyday users.</p>
-        <div class="actions">
-          <a class="btn fill" href="#work">View my work <span>↓</span></a>
-          <a class="btn outline" href="mailto:josephonoja58@gmail.com">Email me <span>↗</span></a>
-        </div>
-        <div class="facts"><span>Developer since 2020</span><span>Full-stack</span><span>Web + Mobile</span></div>
-      </div>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span id="hero-status-text">Available for remote work worldwide</span>
+          </div>
 
-      <div class="portrait">
-        <img src="assets/profile.jpg" alt="Onoja Joseph Miracle">
-        <div class="portrait-label"><small>01</small><strong>Techonjo</strong><span>Building useful software.</span></div>
+          <h1 class="hero-title">Websites and mobile<br>apps people can use.</h1>
+          <p class="hero-lead">
+            I'm Onoja Joseph Miracle, known as Techonjo. A software developer in Bauchi, Nigeria, working remotely with teams and clients worldwide. Since 2020 I've been turning ideas into practical products for businesses, teams and everyday users.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">See my work</a>
+            <!-- One-click copy email button with subtle copy feedback -->
+            <button class="btn btn-copy" id="hero-copy-email" title="Click to copy email address" data-email="josephonoja58@gmail.com">
+              <span class="btn-copy-text">Email me</span>
+              <svg class="copy-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-portrait-col">
+          <div class="portrait-card">
+            <img src="assets/profile.jpg" alt="Onoja Joseph Miracle">
+          </div>
+          <div class="portrait-caption">
+            <strong>Onoja Joseph Miracle</strong>
+            <span>Full-stack developer · Remote &amp; Bauchi, Nigeria</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="work section" id="work">
-      <div class="heading">
-        <div><div class="eyebrow">Selected work</div><h2>Built by me.</h2></div>
-        <p>Real products, not concept screens.</p>
-      </div>
-
-      <div class="feature-grid">
-        <a class="feature feature-green" href="https://9jafarm.com.ng" target="_blank" rel="noopener">
-          <div class="feature-copy">
-            <div class="project-meta"><span>01 · WEB</span><span>↗</span></div>
-            <div>
-              <div class="type">Agriculture platform</div>
-              <h3>9jaFarm</h3>
-              <p>Web platform for 9jaFarm, built around practical digital tools for modern agriculture.</p>
-              <div class="tags"><span>WordPress</span><span>JavaScript</span><span>Web</span></div>
-            </div>
-          </div>
-        </a>
-
-        <div class="app-showcase">
-          <div class="project-meta"><span>02 · MOBILE</span><span>9jaFarm Hydroponics</span></div>
-          <div class="phones">
-            <div class="phone phone-back"><img src="assets/hydropro.jpeg" alt="9jaFarm Hydroponics app screen"></div>
-            <div class="phone phone-front"><img src="assets/9jafarm-farmer.jpg" alt="9jaFarm Farmer's Farm app screen"></div>
-          </div>
-          <div class="app-copy">
-            <div class="type">Farmer's Farm · IoT</div>
-            <h3>9jaFarm Hydroponics</h3>
-            <p>IoT monitoring interface showing system status and live farming measurements including pH, TDS and temperature.</p>
-            <div class="tags"><span>Flutter</span><span>Dart</span><span>IoT</span></div>
-          </div>
+    <!-- Stats Bar -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <span class="stat-title">Since 2020</span>
+          <span class="stat-desc">Four years of active work</span>
         </div>
-
-        <div class="app-showcase">
-          <div class="project-meta"><span>03 · MOBILE</span><span>FinTrack App</span></div>
-          <div class="phones">
-            <div class="phone phone-back"><img src="assets/Fintrack.jpeg" alt="FinTrack app screen"></div>
-            <div class="phone phone-front"><img src="assets/fintrackwhite.jpeg" alt="FinTrack app screen"></div>
-          </div>
-          <div class="app-copy">
-            <div class="type">Finance · Productivity</div>
-            <h3>FinTrack</h3>
-            <p>A finance and productivity application for tracking money, budgets, savings, subscriptions and personal tasks.</p>
-            <div class="tags"><span>Flutter</span><span>Dart</span><span>Mobile</span></div>
-            <div class="legal-links">
-              <a href="fintrack-privacy-policy.html">Privacy Policy ↗</a>
-              <a href="fintrack-terms.html">Terms &amp; Conditions ↗</a>
-              <a href="fintrack-deletion.html">Data Deletion ↗</a>
-            </div>
-          </div>
+        <div class="stat-item">
+          <span class="stat-title">Web and mobile</span>
+          <span class="stat-desc">Full-stack development</span>
         </div>
-
-        <div class="app-showcase">
-          <div class="project-meta"><span>04 · MOBILE</span><span>9jaFarm Open field</span></div>
-          <div class="phones">
-            <div class="phone phone-back"><img src="assets/9jafarm-hydroponics.jpg" alt="9jaFarm Hydroponics app screen"></div>
-            <div class="phone phone-front"><img src="assets/9jafarmweather.jpeg" alt="9jaFarm Hydroponics app screen"></div>
-          </div>
-          <div class="app-copy">
-            <div class="type">MOBILE · OPEN FIELD</div>
-            <h3>9jaFarm Open Field</h3>
-            <p>A mobile application created for open-field farming workflows and day to day farm operations.</p>
-            <div class="tags"><span>Flutter</span><span>Dart</span><span>IoT</span></div>
-          </div>
+        <div class="stat-item">
+          <span class="stat-title" id="bauchi-title">Remote &amp; Bauchi</span>
+          <span class="stat-desc" id="bauchi-time">Loading local time...</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-title">Teaching</span>
+          <span class="stat-desc">Tech mentorship</span>
         </div>
       </div>
+    </section>
 
-      <!-- Jakadiya Foundation — full feature card -->
-      <a class="feature feature-warm" href="https://jakadiyafoundation.org" target="_blank" rel="noopener" style="display:block;border:1px solid var(--line);border-top:0;text-decoration:none;">
-        <div class="feature-copy" style="padding:26px;background:linear-gradient(145deg,#1a1208,#0f0d08);min-height:340px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div class="project-meta"><span>07 · WEB · NGO</span><span>↗</span></div>
+    <!-- Interactive Filter Strip -->
+    <section class="filter-section" id="work">
+      <div class="container filter-container">
+        <div class="filter-pills" role="tablist" aria-label="Project category filter">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            All work <span class="filter-count">7</span>
+          </button>
+          <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">
+            Mobile apps <span class="filter-count">3</span>
+          </button>
+          <button class="filter-btn" data-filter="websites" role="tab" aria-selected="false">
+            Websites <span class="filter-count">4</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Apps Section -->
+    <section class="work-section project-group" id="group-mobile">
+      <div class="container">
+        <div class="section-header">
           <div>
-            <div class="type" style="color:#d4a94a;">Community &amp; Health</div>
-            <h3 style="font-size:clamp(28px,4vw,42px);letter-spacing:-1.5px;color:#eef1eb;margin:8px 0 10px;">Jakadiya Foundation</h3>
-            <p style="color:#8e978e;font-size:13px;max-width:560px;line-height:1.75;">Designed and built the web presence for Jakadiya Kauna Support Foundation — a Nigerian non-profit driving sustainable social change through health resources, transparent funding, and community-led initiatives.</p>
-            <div class="tags" style="margin-top:18px;">
-              <span style="border-color:#2e2510;color:#a08040;">WordPress</span>
-              <span style="border-color:#2e2510;color:#a08040;">JavaScript</span>
-              <span style="border-color:#2e2510;color:#a08040;">NGO</span>
-              <span style="border-color:#2e2510;color:#a08040;">Web</span>
+            <h2>Mobile apps</h2>
+            <p class="section-tagline">Built with Flutter, on Android and iOS, for real users</p>
+          </div>
+          <span class="section-badge">01 — 03</span>
+        </div>
+
+        <div class="apps-list">
+          <!-- App 1: 9jaFarm Hydroponics -->
+          <article class="app-card" data-tilt>
+            <div class="app-visual">
+              <div class="phone-frame phone-back" title="Tap to bring forward">
+                <div class="phone-notch"></div>
+                <img src="assets/hydropro.jpeg" alt="9jaFarm Hydroponics status screen">
+              </div>
+              <div class="phone-frame phone-front" title="Tap to bring forward">
+                <div class="phone-notch"></div>
+                <img src="assets/9jafarm-farmer.jpg" alt="9jaFarm Farmer app screen">
+              </div>
+            </div>
+            <div class="app-info">
+              <div class="project-tag-num">01 · MOBILE</div>
+              <h3>9jaFarm Hydroponics</h3>
+              <p>An IoT monitoring application for hydroponic systems. Shows live sensor readings, including pH, TDS and temperature.</p>
+              <div class="tags-row">
+                <span class="pill-tag">Flutter</span>
+                <span class="pill-tag">Dart</span>
+                <span class="pill-tag">IoT</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- App 2: FinTrack -->
+          <article class="app-card" data-tilt>
+            <div class="app-visual">
+              <div class="phone-frame phone-back" title="Tap to bring forward">
+                <div class="phone-notch"></div>
+                <img src="assets/Fintrack.jpeg" alt="FinTrack dark screen">
+              </div>
+              <div class="phone-frame phone-front" title="Tap to bring forward">
+                <div class="phone-notch"></div>
+                <img src="assets/fintrackwhite.jpeg" alt="FinTrack light screen">
+              </div>
+            </div>
+            <div class="app-info">
+              <div class="project-tag-num">02 · MOBILE</div>
+              <h3>FinTrack</h3>
+              <p>Personal money &amp; budget tracker for managing expenses, budgets, savings and subscriptions.</p>
+              <div class="tags-row">
+                <span class="pill-tag">Flutter</span>
+                <span class="pill-tag">Dart</span>
+                <span class="pill-tag">Finance</span>
+              </div>
+              <div class="app-links">
+                <a href="fintrack-privacy-policy.html">Privacy policy ↗</a>
+                <a href="fintrack-terms.html">Terms ↗</a>
+                <a href="fintrack-deletion.html">Data deletion ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- App 3: 9jaFarm Open Field -->
+          <article class="app-card" data-tilt>
+            <div class="app-visual">
+              <div class="phone-frame phone-back" title="Tap to bring forward">
+                <div class="phone-notch"></div>
+                <img src="assets/9jafarm-hydroponics.jpg" alt="9jaFarm Open Field dashboard">
+              </div>
+              <div class="phone-frame phone-front" title="Tap to bring forward">
+                <div class="phone-notch"></div>
+                <img src="assets/9jafarmweather.jpeg" alt="9jaFarm Open Field weather screen">
+              </div>
+            </div>
+            <div class="app-info">
+              <div class="project-tag-num">03 · MOBILE</div>
+              <h3>9jaFarm Open Field</h3>
+              <p>A mobile application created for open-field farming workflows and day-to-day farm operations.</p>
+              <div class="tags-row">
+                <span class="pill-tag">Flutter</span>
+                <span class="pill-tag">Dart</span>
+                <span class="pill-tag">Agriculture</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Websites Section -->
+    <section class="websites-section project-group" id="group-websites">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Websites</h2>
+            <p class="section-tagline">For agriculture, non-profit, health and academic publishing</p>
+          </div>
+          <span class="section-badge">04 — 07</span>
+        </div>
+
+        <div class="websites-grid">
+          <!-- Card 1: 9jaFarm -->
+          <div class="web-card">
+            <div class="web-card-top">
+              <div class="project-tag-num">04 · WEB</div>
+              <h3>9jaFarm</h3>
+              <p>An agriculture platform with digital tools and resources for modern farm operations.</p>
+              <div class="tags-row">
+                <span class="pill-tag">WordPress</span>
+                <span class="pill-tag">JavaScript</span>
+              </div>
+            </div>
+            <a class="web-link" href="https://9jafarm.com.ng" target="_blank" rel="noopener">9jafarm.com.ng ↗</a>
+          </div>
+
+          <!-- Card 2: Jakadiya Kauna Support Foundation -->
+          <div class="web-card">
+            <div class="web-card-top">
+              <div class="project-tag-num">05 · WEB · NGO</div>
+              <h3>Jakadiya Kauna Support Foundation</h3>
+              <p>Web presence for a Nigerian non-profit driving sustainable social change through health resources, transparent funding and community-led initiatives.</p>
+              <div class="tags-row">
+                <span class="pill-tag">WordPress</span>
+                <span class="pill-tag">JavaScript</span>
+                <span class="pill-tag">Non-Profit</span>
+              </div>
+            </div>
+            <a class="web-link" href="https://jakadiyafoundation.org" target="_blank" rel="noopener">jakadiyafoundation.org ↗</a>
+          </div>
+
+          <!-- Card 3: ISARD Journal -->
+          <div class="web-card">
+            <div class="web-card-top">
+              <div class="project-tag-num">06 · WEB · ACADEMIC</div>
+              <h3>ISARD Journal</h3>
+              <p>The platform for a peer-reviewed, open-access academic journal covering management science, economics, engineering and social sciences, with offices in Abuja and Bauchi.</p>
+              <div class="tags-row">
+                <span class="pill-tag">Open Access</span>
+                <span class="pill-tag">Publishing</span>
+              </div>
+            </div>
+            <a class="web-link" href="https://isardjournal.ng" target="_blank" rel="noopener">isardjournal.ng ↗</a>
+          </div>
+
+          <!-- Card 4: Hasanta Integrated Farm -->
+          <div class="web-card">
+            <div class="web-card-top">
+              <div class="project-tag-num">07 · WEB</div>
+              <h3>Hasanta Integrated Farm</h3>
+              <p>Business website for an aquaculture enterprise, presenting its products, services, training and supplies.</p>
+              <div class="tags-row">
+                <span class="pill-tag">Aquaculture</span>
+                <span class="pill-tag">Business</span>
+              </div>
+            </div>
+            <a class="web-link" href="https://hasantafarm.com" target="_blank" rel="noopener">hasantafarm.com ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-left">
+          <h2>About</h2>
+          <span class="about-subhead">How I work</span>
+        </div>
+        <div class="about-right">
+          <p class="about-lead">
+            I care about the part people actually use. I also teach, which has made me comfortable breaking down technical ideas and building with the person on the other end in mind.
+          </p>
+
+          <div class="skills-table">
+            <div class="skill-row">
+              <span class="skill-label">Mobile</span>
+              <span class="skill-value">Flutter, Dart, State Management, Offline-First</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-label">Web</span>
+              <span class="skill-value">HTML5, CSS3, JavaScript (ES6+), React, WordPress</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-label">Workflow</span>
+              <span class="skill-value">Git, GitHub, REST APIs, Agile Collaboration</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-label">Availability</span>
+              <span class="skill-value">Remote worldwide · Flexible time zone overlap</span>
             </div>
           </div>
-          <div style="margin-top:22px;font-size:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:1.4px;color:#d4a94a;text-transform:uppercase;">jakadiyafoundation.org</div>
         </div>
-      </a>
-
-      <div class="project-list">
-        <article class="row-project">
-          <div class="number">05</div><div><div class="type">WEB</div><h3>Hasanta Integrated Farm</h3></div>
-          <p>Business website for an aquaculture enterprise, presenting its products, services, training and supply offering.</p>
-          <a class="arrow" href="https://hasantafarm.com" target="_blank" rel="noopener">View site ↗</a>
-        </article>
-
-        <article class="row-project">
-          <div class="number">06</div><div><div class="type">WEB</div><h3>9jaFarm website</h3></div>
-          <p>Business website for an agriculture enterprise, presenting its products, services, training and supply offering.</p>
-          <a class="arrow" href="https://9jafarm.com.ng" target="_blank" rel="noopener">View site ↗</a>
-        </article>
-
-        <article class="row-project">
-          <div class="number">08</div><div><div class="type">WEB · ACADEMIC</div><h3>ISARD Journal</h3></div>
-          <p>Built the digital platform for a peer-reviewed, open-access academic journal publishing interdisciplinary research across management science, economics, engineering, and social sciences — with offices in Abuja and Bauchi.</p>
-          <a class="arrow" href="https://isardjournal.ng" target="_blank" rel="noopener">View site ↗</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="about section" id="about">
-      <div class="side"><div class="eyebrow">About</div><span>02</span></div>
-      <div>
-        <h2>I care about the part<br><em>people actually use.</em></h2>
-        <p class="about-text">I've been developing software since 2020, working across websites and mobile applications. I also teach, which has made me comfortable breaking technical ideas down and building products with the person using them in mind.</p>
-        <div class="skill-line">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Flutter</span><span>Dart</span><span>WordPress</span><span>Git</span><span>GitHub</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section" id="contact">
-      <div class="eyebrow">Contact</div>
-      <h2>Have something worth<br><em>building?</em></h2>
-      <div class="contact-bottom">
-        <a class="big-email" href="mailto:josephonoja58@gmail.com">josephonoja58@gmail.com <span>↗</span></a>
-        <div><a href="tel:+2348106177969">+234 810 617 7969</a><a href="https://github.com/techonjo" target="_blank" rel="noopener">github.com/techonjo ↗</a></div>
       </div>
     </section>
   </main>
 
-  <footer><span>© 2026 Techonjo</span><span>Onoja Joseph Miracle</span><span>Bauchi, Nigeria</span></footer>
+  <!-- Dark Footer / Contact Section -->
+  <footer class="footer-dark" id="contact">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <h2 class="footer-heading">Have something<br>worth building?</h2>
+        
+        <!-- Interactive Copy Email in Footer -->
+        <div class="footer-email-box">
+          <button class="footer-email-btn" id="footer-copy-email" data-email="josephonoja58@gmail.com" title="Click to copy email address">
+            <span>josephonoja58@gmail.com</span>
+            <span class="copy-badge">Copy ↗</span>
+          </button>
+        </div>
+
+        <div class="footer-contacts">
+          <a href="tel:+2348106177969">+234 810 617 7969</a>
+          <span class="footer-sep">·</span>
+          <a href="https://github.com/techonjo" target="_blank" rel="noopener">github.com/techonjo ↗</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Techonjo · Onoja Joseph Miracle · Bauchi, Nigeria · Available Remotely Worldwide</p>
+        <span class="footer-shortcuts">Press <kbd>D</kbd> for dark mode</span>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobile-nav');
-    const closeNav  = document.getElementById('close-nav');
-    const mobLinks  = document.querySelectorAll('.mob-link');
-    hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
-    closeNav.addEventListener('click',  () => mobileNav.classList.remove('open'));
-    mobLinks.forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
-  </script>
 </body>
 </html>
